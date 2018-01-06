@@ -1,0 +1,21 @@
+Pseudocode Project Outline:
+
+- user selects either predefined category type or selects to create their own custom categories
+- if predefined category is selected
+    - go to source link and scrape updated category list and save in list
+  else if custom categories are selected
+    - create and save custom categories in list
+- iterate through list of categories
+    - for each category connect with Twitter api and collect most recent tweets based on a search with category
+    - save Twitter result tweets in a mongodb
+- query for the tweet texts and tweet categories and save in pandas dataframe
+- apply sklearn sentiment analysis on tweet texts in dataframe and store sentiment in new sentiment field
+- update mongodb with sentiment field
+- apply some aggregation funcitons and query mongo db
+- use the results to create comparative graphs using d3/jquery
+
+
+Predefined Categories
+
+- Latest Movies | 
+- Latest Shows | 
