@@ -1,10 +1,6 @@
 Pseudocode Project Outline:
 
-- user selects either predefined category type or selects to create their own custom categories
-- if predefined category is selected
-    - go to source link and scrape updated category list and save in list
-  else if custom categories are selected
-    - create and save custom categories in list
+- user selects award show
 - iterate through list of categories
     - for each category connect with Twitter api and collect most recent tweets based on a search with category
     - save Twitter result tweets in a mongodb
@@ -17,5 +13,16 @@ Pseudocode Project Outline:
 
 Predefined Categories
 
-- Latest Movies | 
-- Latest Shows | 
+- 75th Golden Globe Awards — Jan. 7 at 8 p.m. on NBC
+- 23rd Critics Choice Movie Awards — Jan. 11 at 8 p.m. on The CW
+- 49th NAACP Image Awards — Jan. 15 at 9 p.m. on TV One 2018
+- 29th Producers Guild of America Awards — Jan. 20
+- 24th Screen Actors Guild Awards — Jan. 21 at 8 p.m. on TNT and TBS
+- 60th Grammy Awards — Jan. 28 at 8 p.m. on CBS
+- 70th Director Guild of America Awards — Feb. 3
+- 22nd Satellite Awards — Feb. 10
+- 71st British Academy Film Awards — Feb. 18 at 8 p.m. on BBC America
+- 33rd Independent Spirit Awards — March 3 at 5 p.m. on IFC
+- 38th Golden Raspberry Awards — March 3, live stream can be found here.
+- 90th Academy Awards — March 4 at 8 p.m. on ABC
+- 5th iHeartRadio Music Awards — March 11 at 8 p.m. on TBS, TNT and truTV
