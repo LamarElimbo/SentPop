@@ -26,3 +26,59 @@ Predefined Categories
 - 38th Golden Raspberry Awards — March 3, live stream can be found here.
 - 90th Academy Awards — March 4 at 8 p.m. on ABC
 - 5th iHeartRadio Music Awards — March 11 at 8 p.m. on TBS, TNT and truTV
+
+
+-----Database Config-----
+
+Database: Awards
+
+Collections:
+    - Award Shows
+    - Tweets
+    
+Collection Schemas:
+    db.createCollection("awardShows", {
+        validator: {
+            $jsonSchema: {
+                bsonType: "object",
+                required: [ "season", "award", "airDate" ],
+                properties: {
+                    season: {
+                        bsonType: "sting",
+                        description: "The year number/version of award"
+                    },
+                    award: {
+                        bsonType: "sting",
+                        description: "The name of the award"
+                    },
+                    airDate: {
+                        bsonType: "date",
+                        description: "The date that the award are aired"
+                    },
+                    airTime: {
+                        bsonType: "sting",
+                        description: "The time that the award are aired"
+                    }
+                }
+            }
+        }
+    })
+    
+    db.createCollection("tweets", {
+        validator: {
+            $jsonSchema: {
+                bsonType: "object",
+                required: [ "award", "tweet" ],
+                properties: {
+                    award: {
+                        bsonType: "sting",
+                        description: "The year number/version of award"
+                    },
+                    tweet: {
+                        bsonType: "sting",
+                        description: "The name of the award"
+                    }
+                }
+            }
+        }
+    })
