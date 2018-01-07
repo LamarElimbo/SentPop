@@ -1,18 +1,20 @@
 {% extends "_skeleton_template.html" %}
-{% block title %}Lamar's Web Apps - SentPop{% endblock %}
+{% block title %}Lamar's Web Apps - Site Sleuth{% endblock %}
 {% block content %}
 <div class="info-pulse"></div>
 
 <div class="container">
     <br>
     <div id='search-section'>
+        <img src="../../static/site_sleuth_static/crest.png" id='crest'>
 
         <div class="row justify-content-center">
             <div class="col-xs-12 col-md-8" id="site-input">
+                <div id='property'><p><font style='color:#6B582D;'>RESTRICTED USER ACCESS </font><font style='color:white;'>| PROPERTY OF SITE SLEUTH</font></div>
                 <br>
-                <input type='textarea' id='search-bar' form='textform' name='website' placeholder="Select an award show">
-                <form action="{{ url_for('graph')}}" id='textform' method='post'>
-                    <button type="submit" id='submitButton' form='textform'><img src="../../static/search.png" id='search-image'></button>
+                <input type='textarea' id='search-bar' form='textform' name='website' placeholder="ENTER A WEBSITE URL">
+                <form action="{{ url_for('site_sleuth_result')}}" id='textform' method='post'>
+                    <button type="submit" id='submitButton' form='textform'><img src="../../static/site_sleuth_static/search.png" id='search-image'></button>
                 </form>
                 <div id="samples">
                     <div class="col-xs-12 col-md-3">
@@ -40,7 +42,7 @@
             });
         });
         </script>
-        <script src="../../static/sample_website.js"></script>
+        <script src="../../static/site_sleuth_static/sample_website.js"></script>
     </div>
 </div>
 {% endblock %}

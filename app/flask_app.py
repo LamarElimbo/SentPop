@@ -9,7 +9,13 @@ app = Flask(__name__)
 requiredInfo=[]
 
 @app.route('/')
-def graphIt():
+def home():
+    return render_template('home.html', 
+                           css_source='static/app.css'
+                          )
+    
+@app.route('/graph')
+def graph():
         
     negScores, negHeight = getGraphScript.getNegScript()
     posScores, posHeight = getGraphScript.getPosScript()
