@@ -10,10 +10,26 @@
         <div class="row justify-content-center">
             <div class="col-xs-12 col-md-8" id="site-input">
                 <br>
-                <input type='textarea' id='search-bar' form='textform' name='website' placeholder="Select an award show">
+                <input type='textarea' id='search-bar' form='textform' name='award' placeholder="Select an award show">
                 <form action="{{ url_for('graph')}}" id='textform' method='post'>
                     <button type="submit" id='submitButton' form='textform'><img src="../../static/search.png" id='search-image'></button>
                 </form>
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    {% for show in AwardShows %}
+                        <li>{{ show.name }}
+                            <ul>
+                                {% for award in show.awards %}
+                                    <li class="search-option" title="{{ show.name}}:{{ award.award_type }}">{{ award.award_type }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                      {% endfor %}
+                  </ul>
+                </div>
                 <div id="samples">
                     <div class="col-xs-12 col-md-3">
                         <div class="sample-button" title="http://www.lamartalkscode.com/">SAMPLE</div>

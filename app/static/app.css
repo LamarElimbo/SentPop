@@ -35,12 +35,8 @@ html {
     background: linear-gradient(gray, #010101, #010101, #010101); /* Standard syntax */
 }
 
-#crest {
-    width: 30%;
-    margin: auto;
-    display: block;
-    z-index: 0;
-    opacity: 0.25;
+li {
+    color: white;
 }
 
 #property {
