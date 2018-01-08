@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, make_response
 import urllib
+import tweetCollector
 import getGraphScript
 from models import AwardShows, Tweets
 import datetime
@@ -33,6 +34,27 @@ def graph():
     
     print('noms: ', award_selection_nominees)
     
+    tweetCollector.collectTweets(award_selection_nominees)
+    
+    negScores, negHeight = getGraphScript.get_neg_values(sorted(award_selection_nominees))
+    posScores, posHeight = getGraphScript.get_pos_values(sorted(award_selection_nominees))
+    print('negScores: ', negScores)
+    print('negHeight: ', negHeight)
+    print('posScores: ', posScores)
+    print('posHeight: ', posHeight)
+    
+    tweets = Tweets.objects
+    
+    return render_template('graph.html', 
+                           css_source='static/app.css',
+                           searched=full_selection,
+                           neg_latestScores_ordered=negScores, 
+                           neg_graphHeight=negHeight,
+                           pos_latestScores_ordered=posScores, 
+                           pos_graphHeight=posHeight,
+                           x_cats=sorted(award_selection_nominees),
+                           Tweets=tweets
+                          )
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)

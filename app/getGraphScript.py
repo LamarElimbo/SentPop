@@ -1,44 +1,39 @@
 import pickle
+from models import Tweets
+from mongoengine.queryset.visitor import Q
+import json
 
-def getXCats():
-    currentScores = open('../sentimentClassifier/xScores.pkl', 'rb')
-    negScores, posScores = pickle.load(currentScores)
-    currentScores.close()
-    
-    x_keys_ordered = sorted(list(val[0] for val in negScores.items()))
-    
-    return x_keys_ordered
 
-def getNegScript():
+def get_neg_values(p_cats):
     
-    currentScores = open('../sentimentClassifier/xScores.pkl', 'rb')
-    negScores, posScores = pickle.load(currentScores)
-    currentScores.close()
+    neg_scores = []
     
-    neg_latestScores_ordered = sorted(list(val[1] for val in negScores.items()))
+    for nom in p_cats:
+        neg_sent_query = Tweets.objects(Q(nominee = nom) & Q(sentiment = 'neg')).count()
+        neg_scores.append(neg_sent_query)
         
     def roundup (n) :
         return 10*((n+9)//10)
     
-    neg_highestValue = max(neg_latestScores_ordered)
+    neg_highest_value = max(neg_scores)
 
-    neg_graphHeight = roundup(neg_highestValue)
+    neg_graph_height = roundup(neg_highest_value)
 
-    return neg_latestScores_ordered, neg_graphHeight
+    return neg_scores, neg_graph_height
 
-def getPosScript():
+def get_pos_values(p_cats):
     
-    currentScores = open('../sentimentClassifier/xScores.pkl', 'rb')
-    negScores, posScores = pickle.load(currentScores)
-    currentScores.close()
+    pos_scores = []
     
-    pos_latestScores_ordered = sorted(list(val[1] for val in posScores.items()))
-    
+    for nom in p_cats:
+        pos_sent_query = Tweets.objects(Q(nominee = nom) & Q(sentiment = 'pos')).count()
+        pos_scores.append(pos_sent_query)
+        
     def roundup (n) :
         return 10*((n+9)//10)
     
-    pos_highestValue = max(pos_latestScores_ordered)
+    pos_highest_value = max(pos_scores)
 
-    pos_graphHeight = roundup(pos_highestValue)
-    
-    return pos_latestScores_ordered, pos_graphHeight
+    pos_graph_height = roundup(pos_highest_value)
+
+    return pos_scores, pos_graph_height

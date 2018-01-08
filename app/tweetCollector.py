@@ -1,0 +1,39 @@
+import tweepy
+import twitter_creds
+from models import Tweets
+import tweetProcessor
+import pickle
+import os
+
+
+def collectTweets(p_noms):
+
+    auth = tweepy.OAuthHandler(twitter_creds.TWITTER_APP_KEY, twitter_creds.TWITTER_APP_SECRET)
+    auth.set_access_token(twitter_creds.TWITTER_KEY, twitter_creds.TWITTER_SECRET)
+
+    api = tweepy.API(auth)
+
+    for nom in p_noms:
+        results = api.search(q=nom, count=5)
+        
+        for (idx, tweet) in enumerate(results[0:5]):
+            tweet_text = results[idx].text
+            
+            os.chdir('../sentimentClassifier')
+            with open('savedNBClassifier.pkl', 'rb') as f:
+                NBClassifier = pickle.load(f)
+
+            processedTestLine = tweetProcessor.formatTweet(tweet_text)
+            sent = NBClassifier.classify(tweetProcessor.extract_features(tweetProcessor.getFeatureVector(processedTestLine)))
+        
+            tweet = Tweets(
+                nominee = nom,
+                tweet = tweet_text,
+                sentiment = sent
+            )
+            
+            tweet.save()
+            
+            
+            
+            

@@ -9,7 +9,7 @@ html {
 
 #header {
     width: 100%;
-    background-color: #6B582D;
+    background-color: #ffd5d6;
     z-index: 100;
     text-align: center;
     line-height: 50px;
@@ -17,176 +17,79 @@ html {
 }
 
 #header a {
-    font-family: 'PT Mono', monospace;
-    color: white;
+    color: #66033c;
     font-size: 18px;
     letter-spacing: 2px;
 }
 
 .bodystyle {
-    height: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background: #010101; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(gray, #010101, #010101, #010101); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(gray, #010101, #010101, #010101); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(gray, #010101, #010101, #010101); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(gray, #010101, #010101, #010101); /* Standard syntax */
+    background: #009899;
 }
 
-li {
-    color: white;
+
+#BBpost {
+    margin: 0 auto;
 }
 
-#property {
-    text-align: center;
-    font-family: 'PT Mono', monospace;
-    font-size:18px;
-    color: white;
-}
-
-#search-bar {
-    position: absolute;
-    width: 85%;
-    height: 40px;
-    border: .1em solid #6B582D;
-    border-radius: 0.07em;
-    background-color: black;
-    color: white;
-    font-family: 'PT Mono', monospace;
-    font-size: 20px;
-    letter-spacing: 5px;
-    z-index: 90;
-}
-
-#submitButton {
-    position: relative;
-    height: 40px;
-    left: 90%;
-    width: 45px;
-    border: .1em solid #6B582D;
-    border-radius: 0.07em;
-    background-color: #6B582D;
-    cursor: pointer;
-    padding-left: 13px;
-}
-
-#search-image {
-    height: 70%;
-}
-
-#site-input {
-    position: absolute;
-    top: 60%;
-}
-
-#site-input ::placeholder {
-    color: white;
-    text-align: center;
-}
-
-#samples {
-    position: relative;
-    margin-top: 7%;
-    display: flex;
-    justify-content:space-between;
-}
-
-.sample-button {
-    background-color: #6B582D;
+.graph {
+    position:relative;
     width: 100%;
-    border-radius: 0.5em;
-    color: white;
-    font-family: 'PT Mono', monospace;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
+    background: #0080FF;
+    border-style: solid;
+    border: dotted 5px;
+    border-color: black;
+    margin-bottom:25px;
+    z-index:25;
 }
 
-#profile-card {
-    margin-top: 10%;
-    background-color: #6B582D;
-    border: 5px solid #6B582D;
-    color: white;
-    font-family: 'PT Mono', monospace;
-    z-index: 90;
-}
-
-#logo img{
+#xLabelArea {
     position: relative;
-    top: 50px;
-    width:120px;
-    border: 3px solid black;
-}
-
-#title {
-    position: absolute;
-    text-align: right;
-    right: 30px;
-    top: 0px;
-}
-
-#description {
-    position: relative;
-    top: 60px;
-}
-
-#socials {
-    position: relative;
-    top: 20px;
-}
-
-.socials {
-    width: 30px;
-    margin: 3px;
-}
-
-#keywords {
-    position: relative;
-    top: 60px;
-}
-
-#name {
-    position: relative;
-    top: 60px;
+    bottom: 10px;
+    height: 20px;
     width: 100%;
 }
 
-#adminPic {
+.xLabel {
     position: absolute;
-    right: 0px;
-    top: 90px;
-    width:120px;
-    height:120px;
+    top: 7px;
+    font-size: 13px;
+    color:white;
 }
 
-#address {
-    position: relative;
-    top: 70px;
+/*Rectangle bar class styling*/
+
+.bar {
+  fill: #f9027d;
+  stroke: black;
+  stroke-width: 5;
 }
 
-#contact {
-    position: relative;
-    top: 70px;
-    padding-bottom: 70px;
+.bar:hover {
+  fill: #a82d42;
 }
 
-#timezone {
-    position: relative;
-    top: 70px;
+/*Dot class styling*/
+
+.dot {
+    stroke: black;
+    stroke-width: 5;
+    border-radius: 50%;
 }
 
-#bottom-buffer {
-    position: absolute;
-    bottom: -80%;
-    height: 80%;
-    width: 110%;
-    background-color: black;
-    z-index: 0;
+/*Line class styling*/
+
+.line {
+    stroke-width: 5;
+    border-radius: 50%;
 }
 
-#app-info {
-    background-color: dimgrey;
-    font-family: 'PT Mono', monospace;
+.bar:hover {
+  fill: #a82d42;
+}
+
+/*Text class styling*/
+
+.text {
+  fill: white;
+  font-family: sans-serif;
 }

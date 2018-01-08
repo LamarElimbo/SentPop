@@ -16,8 +16,9 @@ class AwardShows(Document):
 
 
 class Tweets(Document):
-    award = StringField()
+    nominee = StringField()
     tweet = StringField()
+    sentiment = StringField()
 
 
 def addAwardShowData():
