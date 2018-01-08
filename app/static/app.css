@@ -25,6 +25,12 @@ html {
 
 .page-header {
     color: white;
+    font-family: 'PT Mono', monospace;
+}
+
+h3 {
+    color: white;
+    font-family: 'PT Mono', monospace;
 }
 
 .bodystyle {
@@ -39,10 +45,6 @@ html {
 .graph {
     position:relative;
     width: 100%;
-    background: #0080FF;
-    border-style: solid;
-    border: dotted 5px;
-    border-color: black;
     margin-bottom:25px;
     z-index:25;
 }
@@ -97,4 +99,10 @@ html {
 .text {
   fill: white;
   font-family: sans-serif;
+}
+
+#tweet-area {
+    height: 500px;
+    border: 1px solid black;
+    overflow:scroll;
 }

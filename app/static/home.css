@@ -103,6 +103,7 @@ html {
     font-size: 20px;
     letter-spacing: 5px;
     z-index: 90;
+    overflow:scroll;
 }
 
 #selections {
@@ -112,6 +113,7 @@ html {
     border-radius: 0.07em;
     color: white;
     font-family: 'PT Mono', monospace;
+    overflow: scroll;
 }
 
 .sample-button {
