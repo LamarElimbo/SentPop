@@ -51,7 +51,8 @@ def graph():
     
     return render_template('graph.html', 
                            css_source='static/app.css',
-                           searched=full_selection,
+                           searchedShow=show_selection,
+                           searchedAward=award_selection,
                            neg_latestScores_ordered=negScores, 
                            neg_graphHeight=negHeight,
                            pos_latestScores_ordered=posScores, 
