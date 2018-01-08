@@ -12,8 +12,12 @@ requiredInfo=[]
 @app.route('/')
 def home():
     awardShows = AwardShows.objects
+    
+    if Tweets.objects != None:
+        Tweets.drop_collection()
+        
     return render_template('home.html', 
-                           css_source='static/app.css',
+                           css_source='static/home.css',
                            AwardShows=awardShows
                           )
  

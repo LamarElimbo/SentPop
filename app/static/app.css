@@ -9,7 +9,7 @@ html {
 
 #header {
     width: 100%;
-    background-color: #ffd5d6;
+    background-color: #542e37;
     z-index: 100;
     text-align: center;
     line-height: 50px;
@@ -17,13 +17,18 @@ html {
 }
 
 #header a {
-    color: #66033c;
+    font-family: 'PT Mono', monospace;
+    color: white;
     font-size: 18px;
     letter-spacing: 2px;
 }
 
+.page-header {
+    color: white;
+}
+
 .bodystyle {
-    background: #009899;
+    background: #0e221f;
 }
 
 
