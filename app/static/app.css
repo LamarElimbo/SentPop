@@ -28,8 +28,7 @@ html {
     font-family: 'Poiret One', cursive;
     background: rgba(31, 74, 89, 0.43);
     position: relative;
-    width: 150%;
-    left: -25%;
+    width: 100%;
     text-align: center;
 }
 
@@ -72,7 +71,7 @@ h3 {
     position: absolute;
     top: 7px;
     font-size: 13px;
-    color:white;
+    color:#0c520a;
 }
 
 /*Rectangle bar class styling*/
@@ -110,6 +109,11 @@ h3 {
 
 .text {
   fill: white;
+    font-family: 'Poiret One', cursive;
+}
+
+.text-title {
+  color: #0c520a;
     font-family: 'Poiret One', cursive;
 }
 
