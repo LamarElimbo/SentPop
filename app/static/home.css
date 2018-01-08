@@ -17,7 +17,7 @@ html {
 }
 
 #header a {
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
     color: white;
     font-size: 18px;
     letter-spacing: 2px;
@@ -45,7 +45,7 @@ html {
 
 #property {
     text-align: center;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
     font-size:18px;
     color: white;
 }
@@ -58,7 +58,7 @@ html {
     border: .1em solid black;
     background-color: black;
     color: white;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
     font-size: 20px;
     z-index: 90;
 }
@@ -99,7 +99,7 @@ html {
     border-radius: 0.07em;
     background-color: black;
     color: white;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
     font-size: 20px;
     letter-spacing: 5px;
     z-index: 90;
@@ -112,7 +112,7 @@ html {
     border: .1em solid black;
     border-radius: 0.07em;
     color: white;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
     overflow: scroll;
 }
 
@@ -121,7 +121,7 @@ html {
     width: 100%;
     border-radius: 0.5em;
     color: white;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
     font-size: 16px;
     text-align: center;
     cursor: pointer;
@@ -132,7 +132,7 @@ html {
     background-color: #6B582D;
     border: 5px solid #6B582D;
     color: white;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
     z-index: 90;
 }
 
@@ -211,5 +211,5 @@ html {
 
 #app-info {
     background-color: dimgrey;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
 }

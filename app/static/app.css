@@ -17,7 +17,7 @@ html {
 }
 
 #header a {
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
     color: white;
     font-size: 18px;
     letter-spacing: 2px;
@@ -25,7 +25,7 @@ html {
 
 .page-header {
     color: white;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
     background: rgba(31, 74, 89, 0.43);
     position: relative;
     width: 150%;
@@ -35,11 +35,18 @@ html {
 
 h3 {
     color: white;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Poiret One', cursive;
 }
 
 .bodystyle {
-    background: #0e221f;
+    height: 100%;
+    background-image: -webkit-repeating-radial-gradient(center center, rgba(12,82,10,.9), rgba(0,0,0,.2) 1px, transparent 0.1px, transparent 100%);
+    background-image: -moz-repeating-radial-gradient(center center, rgba(12,82,10,.9), rgba(0,0,0,.2) 1px, transparent 0.1px, transparent 100%);
+    background-image: -ms-repeating-radial-gradient(center center, rgba(12,82,10,.9), rgba(0,0,0,.2) 1px, transparent 0.1px, transparent 100%);
+    background-image: repeating-radial-gradient(center center, rgba(12,82,10,.9), rgba(0,0,0,.2) 1px, transparent 0.1px, transparent 100%);
+    -webkit-background-size: 3px 3px;
+    -moz-background-size: 3px 3px;
+    background-size: 3px 3px;
 }
 
 
@@ -103,7 +110,7 @@ h3 {
 
 .text {
   fill: white;
-  font-family: sans-serif;
+    font-family: 'Poiret One', cursive;
 }
 
 #tweet-area {
