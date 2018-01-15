@@ -1,4 +1,6 @@
-from mongoengine import *
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 connect('pop_tweets')
 

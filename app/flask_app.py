@@ -2,11 +2,26 @@ from flask import Flask, request, render_template, make_response
 import urllib
 import tweetCollector
 import getGraphScript
-from models import AwardShows, Tweets
+from models import db, AwardShows, Tweets
 import datetime
 import json
 
 app = Flask(__name__)
+
+POSTGRES = {
+    'user': 'postgres',
+    'pw': 'password',
+    'db': 'my_database',
+    'host': 'localhost',
+    'port': '5432',
+}
+
+app.config['DEBUG'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://%(user)s:\
+%(pw)s@%(host)s:%(port)s/%(db)s' % POSTGRES
+db.init_app(app)
+
+
 requiredInfo=[]
 
 @app.route('/')
