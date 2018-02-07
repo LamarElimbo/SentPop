@@ -1,15 +1,18 @@
-from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, ForeignKey, Integer, String, Float, Boolean
+from sqlalchemy import Index
+from sqlalchemy.orm import relationship, backref
 
-db = SQLAlchemy()
+Base = declarative_base()
 
-connect('pop_tweets')
-
-class Awards(EmbeddedDocument):
+class Awards(Base):
+    __tablename__ = 'awards'
     award_type = StringField()
     nominees = ListField(StringField())
 
 
-class AwardShows(Document):
+class AwardShows(Base):
+    __tablename__ = 'award_shows'
     season = IntField()
     name = StringField()
     air_date = StringField()
@@ -17,7 +20,8 @@ class AwardShows(Document):
     awards = ListField(EmbeddedDocumentField(Awards))
 
 
-class Tweets(Document):
+class Tweets(Base):
+    __tablename__ = 'tweets'
     nominee = StringField()
     tweet = StringField()
     sentiment = StringField()
