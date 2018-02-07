@@ -5,26 +5,21 @@ from sqlalchemy.orm import relationship, backref
 
 Base = declarative_base()
 
-class Awards(Base):
-    __tablename__ = 'awards'
-    award_type = StringField()
-    nominees = ListField(StringField())
-
-
-class AwardShows(Base):
-    __tablename__ = 'award_shows'
-    season = IntField()
-    name = StringField()
-    air_date = StringField()
-    air_time = StringField()
-    awards = ListField(EmbeddedDocumentField(Awards))
-
+class RealityShows(Base):
+    __tablename__ = 'reality_shows'
+    show = Column(String(250), index = True, primary_key = True)
+    contestant = Column(String(250), index = True, primary_key = True)
+    tweets = relationship('Tweets', backref = 'reality_shows')
+    num_pos_tweets = Column(Integer)
+    num_neg_tweets = Column(Integer)
+    
 
 class Tweets(Base):
     __tablename__ = 'tweets'
-    nominee = StringField()
-    tweet = StringField()
-    sentiment = StringField()
+    tweet_id = Column(String(250), index = True, primary_key = True)
+    tweet = Column(String(250))
+    sentiment = Column(String(250))
+    date_time = Column(String(250))
 
 
 def addAwardShowData():
