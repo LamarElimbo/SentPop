@@ -36,14 +36,14 @@ Base = declarative_base()
 class RealityShow(Base):
     __tablename__ = 'reality_shows'
     show = Column(String(250), index = True, primary_key = True)
-    contestant = Column(String(250), index = True, primary_key = True)
-    tweets = relationship('Tweets', backref = 'reality_shows')
+    contestant = relationship('Contestant', backref = 'reality_shows')
     num_pos_tweets = Column(Integer)
     num_neg_tweets = Column(Integer)
     
 class Contestant(Base):
     full_name = Column(String(250))
     alternative_names = Column(String(250), index = True, primary_key = True)
+    tweets = relationship('Tweet', backref = 'reality_shows')
     
 class Tweet(Base):
     __tablename__ = 'tweets'
