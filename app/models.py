@@ -16,7 +16,7 @@ class RealityShows(Base):
 
 class Tweets(Base):
     __tablename__ = 'tweets'
-    tweet_id = Column(String(250), index = True, primary_key = True)
+    tweet_id = Column(Integer, index = True, primary_key = True)
     tweet = Column(String(250))
     sentiment = Column(String(250))
     date_time = Column(String(250))

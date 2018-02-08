@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, make_response
 import urllib
 import tweetCollector
 import getGraphScript
-from models import db, AwardShows, Tweets
+#from models import db, AwardShows, Tweets
 import datetime
 import json
 
